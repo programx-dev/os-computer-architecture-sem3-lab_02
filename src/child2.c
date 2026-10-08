@@ -21,7 +21,7 @@ int main(void) {
 
         ssize_t i;
         for (i = 0; i < bytes_read; ++i) {
-            if (isspace((unsigned char)buff[i]) && buff[i] != '\n') {
+            if (isspace((unsigned char)buff[i])) {
                 buff[i] = '_';
             }
         }
