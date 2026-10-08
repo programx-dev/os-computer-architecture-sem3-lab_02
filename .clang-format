@@ -1,0 +1,25 @@
+# Базовый стиль
+BasedOnStyle: LLVM
+
+# Размер отступа (4 пробела вместо 2)
+IndentWidth: 4
+
+# Ширина символа табуляции
+TabWidth: 4
+
+# Использовать пробелы вместо символов табуляции
+UseTab: Never
+
+# Максимальная длина строки до автоматического переноса
+ColumnLimit: 120
+
+BreakBeforeBraces: Attach
+
+# Запрет сворачивания коротких блоков и if в одну строку
+AllowShortBlocksOnASingleLine: false
+AllowShortFunctionsOnASingleLine: None
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLoopsOnASingleLine: false
+
+# Пробелы вокруг операторов
+SpaceBeforeParens: ControlStatements
