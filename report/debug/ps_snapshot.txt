@@ -1,0 +1,4 @@
+    PID    PPID STAT WCHAN                    COMMAND
+  15282   15233 S+   anon_pipe_read           parent
+  15283   15282 S+   anon_pipe_read            \_ child1
+  15284   15282 S+   anon_pipe_read            \_ child2
