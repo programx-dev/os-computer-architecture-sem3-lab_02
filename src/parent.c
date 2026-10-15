@@ -245,5 +245,27 @@ BREAK_WHILE:
         }
     }
 
-    return parent_error;
+    int result = parent_error;
+
+    if (result == EXIT_SUCCESS && (res_wait1 == -1 || res_wait2 == -1)) {
+        result = EXIT_FAILURE;
+    }
+
+    if (result == EXIT_SUCCESS && res_wait1 > 0) {
+        if (WIFEXITED(status1)) {
+            result = WEXITSTATUS(status1);
+        } else if (WIFSIGNALED(status1)) {
+            result = 128 + WTERMSIG(status1);
+        }
+    }
+
+    if (result == EXIT_SUCCESS && res_wait2 > 0) {
+        if (WIFEXITED(status2)) {
+            result = WEXITSTATUS(status2);
+        } else if (WIFSIGNALED(status2)) {
+            result = 128 + WTERMSIG(status2);
+        }
+    }
+
+    return result;
 }
