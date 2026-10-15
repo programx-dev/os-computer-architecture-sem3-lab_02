@@ -29,7 +29,7 @@ cd build
 ## Базовый strace
 
 ```bash
-strace -f -o ../report/strace/strace_f.txt ./parent < ../data/demo_basic.txt
+strace -f -o ../report/debug/strace_f.txt ./parent < ../data/demo_basic.txt
 ```
 
 -f: следить за двумя дочерними процессами.
@@ -39,7 +39,7 @@ strace -f -o ../report/strace/strace_f.txt ./parent < ../data/demo_basic.txt
 ## Короткий strace
 
 ```bash
-strace -f -e trace=pipe2,clone,dup2,execve,read,write,close,wait4,exit_group -o ../report/strace/strace_short.txt ./parent < ../data/demo_basic.txt
+strace -f -e trace=pipe2,clone,dup2,execve,read,write,close,wait4,exit_group -o ../report/debug/strace_short.txt ./parent < ../data/demo_basic.txt
 ```
 
 -e trace=... оставляет только перечисленные системные вызовы:
